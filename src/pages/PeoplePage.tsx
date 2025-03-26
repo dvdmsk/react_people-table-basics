@@ -17,7 +17,7 @@ const PeoplePage: React.FC = () => {
           const mother = response.find(mom => mom.name === person.motherName);
           const father = response.find(dad => dad.name === person.fatherName);
 
-          return { ...person, mother: mother, father: father };
+          return { ...person, mother, father };
         });
 
         setPeople(newPeople);

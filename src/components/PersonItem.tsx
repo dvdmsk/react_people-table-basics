@@ -41,28 +41,20 @@ const PersonItem: React.FC<Props> = ({ person }) => {
       <td>{died}</td>
 
       <td>
-        {motherName ? (
-          mother ? (
-            <Link className="has-text-danger" to={`../${mother.slug}`}>
-              {motherName}
-            </Link>
-          ) : (
-            motherName
-          )
+        {mother ? (
+          <Link className="has-text-danger" to={`../${mother.slug}`}>
+            {motherName}
+          </Link>
         ) : (
-          '-'
+          motherName || '-'
         )}
       </td>
 
       <td>
-        {fatherName ? (
-          father ? (
-            <Link to={`../${father.slug}`}>{fatherName}</Link>
-          ) : (
-            fatherName
-          )
+        {father ? (
+          <Link to={`../${father.slug}`}>{fatherName}</Link>
         ) : (
-          '-'
+          fatherName || '-'
         )}
       </td>
     </tr>
